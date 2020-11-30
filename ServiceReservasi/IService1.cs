@@ -12,9 +12,9 @@ namespace ServiceReservasi
     public interface IService1
     {
         [OperationContract]
-        string pemesanan(string IDpemesanan, string NamaCustomer, string NoTelepon, int JumlahPemesanan, string IDLokasi);
+        string pemesanan(string IDpemesanan, string NamaCustomer, string No_Telepon, int JumlahPemesanan, string IDLokasi);
         [OperationContract]
-        string editPemesanan(string IDPemesanan, string NamaCustomer);
+        string editPemesanan(string IDPemesanan, string NamaCustomer, string No_telepon);
         [OperationContract]
         string deletePemesanan(string IDPemesanan);
         [OperationContract]
@@ -73,6 +73,8 @@ namespace ServiceReservasi
     [DataContract]
     public class Pemesanan
     {
+        internal string No_Telepon;
+
         [DataMember]
         public string IDPemesanan { get; set; }
         [DataMember]
@@ -82,7 +84,7 @@ namespace ServiceReservasi
         [DataMember]
         public int JumlahPemesanan { get; set; }
         [DataMember]
-        public string IDLokasi { get; set; }
+        public string Lokasi { get; set; }
 
     }
 }
